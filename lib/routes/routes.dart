@@ -11,7 +11,7 @@ class RouteGenerator {
         );
       case MainScreen.routeName:
         return MaterialPageRoute(
-          builder: (context) => const MainScreen(),
+          builder: (context) => MainScreen(),
         );
       default:
         return _errorRoute();
