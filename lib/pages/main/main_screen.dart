@@ -20,7 +20,15 @@ class _MainScreenState extends State<MainScreen> {
 
   Color _color = Colors.white;
 
-  void startDiscoShow() {
+  ///Creating new color
+  void generateNewColor() {
+    setState(() {
+      _color = _helper.generateColor();
+    });
+  }
+
+  ///Change color 5 times ( based on Timer )
+  void changeColorAutomatically() {
     int count = 5;
     Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
@@ -40,12 +48,10 @@ class _MainScreenState extends State<MainScreen> {
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () {
-          setState(() {
-            _color = _helper.generateColor();
-          });
+          generateNewColor();
         },
         onDoubleTap: () {
-          startDiscoShow();
+          changeColorAutomatically();
         },
         child: const Center(
           child: Text(
