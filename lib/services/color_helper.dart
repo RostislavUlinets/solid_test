@@ -18,12 +18,18 @@ class ColorHelper {
     final Random _random = Random();
 
     const int rgbNumber = 255;
-
-    return Color.fromARGB(
+    Color _color = Color.fromARGB(
       rgbNumber,
       _random.nextInt(rgbNumber),
       _random.nextInt(rgbNumber),
       _random.nextInt(rgbNumber),
     );
+
+    /// Black background will hide main text.
+    if (_color == Colors.black) {
+      _color = generateColor();
+    }
+
+    return _color;
   }
 }
