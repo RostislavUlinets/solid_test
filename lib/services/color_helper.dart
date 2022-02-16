@@ -11,13 +11,20 @@ class ColorHelper {
     return _instance;
   }
 
-  Random _random = Random();
+  final Random _random = Random();
 
   Color generateColor() {
-    List<int> colorIntegers = []..length = 3;
+    const int otpSize = 3;
+    List<int> colorIntegers = List<int>.filled(otpSize, 255);
+
     for (int i = 0; i < 3; i++) {
       colorIntegers[i] = _random.nextInt(255);
     }
-    return const Color.fromARGB(255, 255, 255, 255);
+    return Color.fromARGB(
+      255,
+      colorIntegers[0],
+      colorIntegers[1],
+      colorIntegers[2],
+    );
   }
 }
