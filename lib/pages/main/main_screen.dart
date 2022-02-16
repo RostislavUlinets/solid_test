@@ -3,10 +3,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:solid_test/services/color_helper.dart';
 
+///Main screen
 class MainScreen extends StatefulWidget {
+  ///Route name for nested navigation
   static const String routeName = '/main';
 
-  MainScreen({Key? key}) : super(key: key);
+  ///Constant constructor
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
   State<MainScreen> createState() => _MainScreenState();

@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:solid_test/pages/main/main_screen.dart';
 import 'package:solid_test/resources/app_image.dart';
 
+///Splash screen for program
 class SplashScreen extends StatelessWidget {
+  ///Route name for nested navigation
+
   static const String routeName = '/splash';
+
+  ///Constant constructor
 
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -16,7 +21,8 @@ class SplashScreen extends StatelessWidget {
         // Navigator.pushNamed(context, RegistrationScreen.routeName);
       },
     );
-    return Scaffold(
+
+    return const Scaffold(
       body: Center(
         child: Image(
           image: AppImage.testLogo,

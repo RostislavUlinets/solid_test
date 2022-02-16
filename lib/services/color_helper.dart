@@ -2,29 +2,28 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+///Class for work with color
 class ColorHelper {
-  ColorHelper._();
-
   static final ColorHelper _instance = ColorHelper._();
 
+  /// Singleton
   factory ColorHelper() {
     return _instance;
   }
 
-  final Random _random = Random();
+  ColorHelper._();
 
+  ///Method for creating color
   Color generateColor() {
-    const int otpSize = 3;
-    List<int> colorIntegers = List<int>.filled(otpSize, 255);
+    final Random _random = Random();
 
-    for (int i = 0; i < 3; i++) {
-      colorIntegers[i] = _random.nextInt(255);
-    }
+    const int rgbNumber = 255;
+
     return Color.fromARGB(
-      255,
-      colorIntegers[0],
-      colorIntegers[1],
-      colorIntegers[2],
+      rgbNumber,
+      _random.nextInt(rgbNumber),
+      _random.nextInt(rgbNumber),
+      _random.nextInt(rgbNumber),
     );
   }
 }

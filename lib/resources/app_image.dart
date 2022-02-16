@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+///Class for images
 class AppImage {
-  AppImage._();
-
   static const String _path = 'assets/image';
 
-  static AssetImage testLogo = const AssetImage('$_path/test_logo.png');
+  ///Logo image
+  static const AssetImage testLogo = AssetImage('$_path/test_logo.png');
+
+  AppImage._();
 }
